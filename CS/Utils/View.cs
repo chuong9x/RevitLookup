@@ -80,7 +80,7 @@ namespace RevitLookup.Utils
         /// <param name="sheet"></param>
         /// <returns></returns>
         public static ElementSet
-        GetAllSheets (Document doc)
+            GetAllSheets(Document doc)
         {
             ElementSet allSheets = new ElementSet();
             FilteredElementCollector fec = new FilteredElementCollector(doc);
@@ -90,27 +90,27 @@ namespace RevitLookup.Utils
 
             foreach (Element element in elements)
             {
-               ViewSheet viewSheet = element as ViewSheet;
+                ViewSheet viewSheet = element as ViewSheet;
 
-               if (null == viewSheet)
-               {
-                  continue;
-               }
-               else
-               {
-                  ElementId objId = viewSheet.GetTypeId();
-                  if (ElementId.InvalidElementId == objId)
-                  {
-                     continue;
-                  }
-                  else
+                if (null == viewSheet)
+                {
+                    continue;
+                }
+                else
+                {
+                    ElementId objId = viewSheet.GetTypeId();
+                    if (ElementId.InvalidElementId == objId)
+                    {
+                        continue;
+                    }
+                    else
                   {
                      allSheets.Insert(viewSheet);
                   }
                }
             }
-
             return allSheets;
+            
         }
 
 

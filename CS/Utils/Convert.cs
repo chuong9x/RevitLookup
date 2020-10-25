@@ -36,8 +36,6 @@ namespace RevitLookup.Utils
     public class Convert
     {
 
-
-
         /// <summary>
         /// Revit wants values in feet and decimal inches.  Sometimes its more convenient to think in Inches,
         /// especially for the ObjectARX crowd.
